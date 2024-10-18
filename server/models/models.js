@@ -1,4 +1,4 @@
-const sequelize = require("./db");
+const sequelize = require("../db");
 const { DataType, DataTypes, STRING } = require("sequelize");
 
 const User = sequelize.define("user", {
@@ -15,7 +15,7 @@ const Measurements = sequelize.define("measurements", {
     primaryKey: true,
     autoIncrement: true,
   },
-  user_id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+  user_id: { type: DataTypes.INTEGER, primaryKey: true },
   date: { type: DataTypes.DATE },
   height: { type: DataTypes.INTEGER },
   weight: { type: DataTypes.NUMBER },
@@ -28,11 +28,11 @@ const Activity_Logs = sequelize.define("activity_logs", {
     primaryKey: true,
     autoIncrement: true,
   },
-  user_id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+  user_id: { type: DataTypes.INTEGER, primaryKey: true },
   type: { type: DataTypes.STRING },
   distance: { type: DataTypes.NUMBER },
   calories_burned: { type: DataTypes.NUMBER },
-  device_id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+  device_id: { type: DataTypes.INTEGER, primaryKey: true },
   created_at: { type: DataTypes.DATE },
 });
 
@@ -42,7 +42,7 @@ const Notifications = sequelize.define("notifications", {
     primaryKey: true,
     autoIncrement: true,
   },
-  user_id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+  user_id: { type: DataTypes.INTEGER, primaryKey: true },
   message: { type: DataTypes.STRING },
   is_read: { type: DataTypes.BOOLEAN },
   created_at: { type: DataTypes.DATE },
@@ -54,13 +54,13 @@ const Devices = sequelize.define("devices", {
     primaryKey: true,
     autoIncrement: true,
   },
-  user_id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+  user_id: { type: DataTypes.INTEGER, primaryKey: true },
   name_device: { type: DataTypes.STRING },
 });
 
 const Goals = sequelize.define("goals", {
   goals_id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-  user_id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+  user_id: { type: DataTypes.INTEGER, primaryKey: true },
   start_date: { type: DataTypes.DATE },
   end_date: { type: DataTypes.DATE },
   notes: { type: DataTypes.STRING },

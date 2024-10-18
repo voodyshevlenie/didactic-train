@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@sequelize/core": "^7.0.0-alpha.42",
+    "cross-env": "^7.0.3",
+    "sequelize": "^6.37.4",
+    "sequelize-authentication": "^0.3.0"
+  }
+}
